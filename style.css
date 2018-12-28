@@ -1,0 +1,235 @@
+/* ultima alteração 27/12*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+
+/*  limpa os floats depois das colunas*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* alinhamento do texto, mudança de cor  no header e footer */
+ .col-md {
+    
+    padding: 1em; 
+    text-align: center;
+  
+} 
+
+/* aumentar o tamanho da letra, alinhamento do texto, mudança de cor no header */
+.col-md.header{
+    padding: 1em; 
+    text-align: center;
+    background-color: #64B5F6;
+    /* padding: 1em; */
+}
+
+/* alinhamento do texto */
+.war_text, .column.sideleft, .column.sideright {
+    text-align: center;
+    
+}
+
+/* Margem da coluna com as informações do jogo */
+.column.sideleft p{
+    margin: 16px;
+}
+
+
+/* div´s das informações do jogo  */
+.info{
+    width: auto;
+  height: 50px;
+  border: 1px solid white;
+  
+}
+/*  */
+/* .info p {
+    
+    margin: 0;
+    margin-top: 10px;
+} */
+
+/* informação que deve ser usado o teclado */
+#arrows{
+    color: #217DD6;
+}
+
+/* .col-md-10{*/
+    /* position: relative;
+  left: 20%; */
+  /* margin-left: -50px; 
+} */
+
+
+/* Background das div´s do jogo e footer */
+.row.game{
+    background-color:#263238;
+    color: white;
+}
+
+/* formatação do icons do formulario */
+.icon {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+
+/* formatação do formulario */
+.input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+/* botão do formulario */
+.btn {
+    background-color: #5D2B18;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+/* botão restart */
+.btn.restart{
+    background-color: #FE9F00;
+    color: white;
+    margin-top: 1em;
+}
+/* botão pause */
+.btn.pause{
+    background-color: #F47E16;
+    color: white;
+    margin-bottom: 1em;
+}
+/* botão play */
+.btn.play{
+    background-color: #D84315;
+    color: white;
+    margin-bottom: 1em;
+}
+/* opacidade dos botões */
+.btn:hover {
+    opacity: 1;
+}
+
+/* formatação do canvas */
+canvas {
+    background-color: green;
+    background-image: url("background_inicio.png"); 
+    background-repeat: no-repeat;
+    /* width: 512px; 
+    height: 480px;   */
+    /*max-width: 512px; 
+    min-height: 470px;  */
+    /* border: solid 1px white; */
+    /* width: 100%;  */
+    position: relative;
+    left: 10%;
+    
+}
+
+/*  formatação */
+/* #pontua_final{
+    padding-top: 1em;
+    padding-left: 1em;
+} */
+
+/* formatação do conteudo do formulario */
+.score{ 
+    border-bottom: solid 0.5px grey;
+    border-right:  solid 0.5px grey;
+    width: 100%;
+    color: grey;
+    text-align: center;
+}
+
+/* formatação das colunas */
+.column {
+    float: left;
+    padding: 0.6em;
+   
+}
+
+.column.sideleft {
+    
+    width: 25%;
+}
+
+.column.sideright {
+    
+    width: 25%;
+}
+
+
+ .column.middle {
+    
+    width: 50%;
+    
+} 
+
+/* .row{
+    border: 1px solid;
+} */
+
+/* Clear floats after the columns */
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+} */
+
+
+/* Responsive layout */
+
+
+@media (max-width: 1200px) {
+    
+    .column.sideright   {
+        width: 30%;
+    }
+    .column.sideleft  {
+        width: 100%;
+        height: 200px;
+        overflow-y: scroll;
+    }
+    .column.middle{
+        width: 70%
+    }
+
+
+
+}
+
+@media (max-width: 900px) {
+    .column.sideright,.column.sideleft, .column.middle {
+        width: 100%;
+    }
+    canvas{
+    position: relative;
+    left: 10%;
+    }
+}
+
+
+
+
