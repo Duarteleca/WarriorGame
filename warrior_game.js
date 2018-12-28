@@ -87,11 +87,11 @@ var begingame = function () {
 	player.x = canvas.width / 2;
 	player.y = canvas.height / 2;
 
-	enemy.x = (Math.random() * (canvas.width - 64));
-	enemy.y = (Math.random() * (canvas.height - 64));
+	enemy.x = (Math.random() * (canvas.width - 80));
+	enemy.y = (Math.random() * (canvas.height - 120));
 
-	food.x = 32 + (Math.random() * (canvas.width - 64));
-	food.y = 32 + (Math.random() * (canvas.height - 64));
+	food.x = (Math.random() * (canvas.width - 40));
+	food.y = (Math.random() * (canvas.height - 40));
 	console.log(canvas.width);
 	console.log(canvas.height);
 };
@@ -99,16 +99,19 @@ var begingame = function () {
 // sempre que "come" o bonus do jogo(pistola), ela muda de posição.
 var eatfooder = function () {
 
-	food.x = 32 + (Math.random() * (canvas.width - 64));
-	food.y = 32 + (Math.random() * (canvas.height - 64));
+	food.x = (Math.random() * (canvas.width - 40));
+	food.y = (Math.random() * (canvas.height - 40));
+	// o inimigo muda de posição, para dificultar o jogador
+	enemy.x = (Math.random() * (canvas.width - 80));
+	enemy.y = (Math.random() * (canvas.height - 120));
 };
 
 
 // sempre que "come" o inimigo , ele muda de posição.
 var enemylife = function () {
 
-	enemy.x = 32 + (Math.random() * (canvas.width - 64));
-	enemy.y = 32 + (Math.random() * (canvas.height - 64));
+	enemy.x = (Math.random() * (canvas.width - 80));
+	enemy.y = (Math.random() * (canvas.height - 120));
 
 
 };
@@ -136,10 +139,10 @@ var update = function (modifier) {
 	// sempre que o jogador tocar no inimigo executa seguinte codigo
 	// aumenta o speed do jogador e retira um vida no jogo (aqui aumenta para trabalhar melhor a informação)
 	if (
-		player.x <= (enemy.x + 32)
-		&& enemy.x <= (player.x + 32)
-		&& player.y <= (enemy.y + 32)
-		&& enemy.y <= (player.y + 32)
+		player.x <= (enemy.x + 35)
+		&& enemy.x <= (player.x + 35)
+		&& player.y <= (enemy.y + 50)
+		&& enemy.y <= (player.y + 50)
 	) {
 		var livedevil = new Audio('inimigo.mp3');
 		livedevil.play();
@@ -186,7 +189,7 @@ var update = function (modifier) {
 
 	// limites para jogador no canvas
 	function fundo() {
-		var fundo = canvas.height - 35;
+		var fundo = canvas.height - 60;
 		if (player.y > fundo) {
 			player.y = fundo;
 			player.speed += 128;
@@ -225,10 +228,10 @@ var update = function (modifier) {
 
 	// quando come o "bonus" a pontuação aumenta quando atinge o limite termina(executa o gameover), aumenta o speed do jogador
 	if (
-		player.x <= (food.x + 32)
-		&& food.x <= (player.x + 32)
-		&& player.y <= (food.y + 32)
-		&& food.y <= (player.y + 32)
+		player.x <= (food.x + 35)
+		&& food.x <= (player.x + 35)
+		&& player.y <= (food.y + 35)
+		&& food.y <= (player.y + 35)
 	) {
 
 		var gun = new Audio('gun.mp3');
